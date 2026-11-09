@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "name": "greeting",
+      "input": "hello",
+      "expects": ["helpful response"]
+    }
+  ]
+}

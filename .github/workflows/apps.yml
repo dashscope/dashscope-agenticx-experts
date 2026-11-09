@@ -1,0 +1,23 @@
+name: App Catalog
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install AgenticX Runtime
+        run: pip install "dashscope-agenticx>=1.0.0,<2" pytest
+      - name: Validate App manifests, evals, and acceptance metadata
+        run: pytest -q tests/test_apps.py

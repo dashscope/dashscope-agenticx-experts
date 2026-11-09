@@ -1,0 +1,18 @@
+[app]
+name = "basic-chat"
+version = "1.0.0"
+publisher = "agenticx"
+description = "Minimal teaching App for an AgenticX conversation profile"
+profile = ".agenticx"
+eval = "eval.json"
+acceptance = "acceptance.toml"
+
+[runtime]
+requires = ">=1.0.0,<2"
+
+[permissions]
+python_tools = false
+shell_hooks = false
+shell = false
+network = []
+filesystem = []

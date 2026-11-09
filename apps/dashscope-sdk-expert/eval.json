@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "name": "sdk-migration",
+      "input": "Migrate a legacy text-generation call to the current SDK",
+      "expects": ["version-aware guidance", "runnable example"]
+    },
+    {
+      "name": "error-diagnosis",
+      "input": "Diagnose a DashScope request failure",
+      "expects": ["evidence", "actionable fix", "verification"]
+    }
+  ]
+}

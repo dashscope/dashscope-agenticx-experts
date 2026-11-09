@@ -1,0 +1,13 @@
+.idea/
+.vscode/
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.DS_Store
+**/.agenticx/session/
+**/.agenticx/memory/
+**/.agenticx/cache/
+**/.agenticx/backup/
+**/.agenticx/audit.log
+**/.acli/

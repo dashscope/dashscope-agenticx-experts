@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "name": "application-design",
+      "input": "Design a Bailian application with explicit permissions",
+      "expects": ["architecture", "permissions", "acceptance criteria"]
+    }
+  ]
+}
