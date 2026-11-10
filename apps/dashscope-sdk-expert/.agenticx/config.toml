@@ -1,5 +1,5 @@
 user_name = "dashscope"
 provider = "tongyi"
-model = "qwen3.8-max"
+model = "qwen3.8-flash"
 memory_user_id = "agenticx-dashscope"
 enabled_capabilities = "local.subagent,local.delegate,local.memory"

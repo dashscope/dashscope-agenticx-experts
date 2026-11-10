@@ -60,3 +60,18 @@ def test_apps_require_stable_runtime():
         assert manifest is not None
         assert manifest.version == "1.0.0"
         assert manifest.runtime_requires == ">=1.0.0,<2"
+
+
+def test_expert_profiles_use_flash_default_and_lowercase_models():
+    from dashscope_agenticx.utils.toml import load_toml
+
+    for name in ("basic-chat", "dashscope-sdk-expert"):
+        profile = ROOT / "apps" / name / ".agenticx"
+        config = load_toml(profile / "config.toml")
+        assert config["model"] == "qwen3.8-flash"
+        for provider in load_toml(profile / "custom-extensions.toml")["providers"]:
+            assert provider["default_model"] == "qwen3.8-flash"
+            models = provider["models"]
+            assert models[0] == "qwen3.8-flash"
+            assert len(models) == len(set(models))
+            assert all(model == model.strip().lower() for model in models)

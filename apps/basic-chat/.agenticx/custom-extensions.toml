@@ -19,12 +19,12 @@
 name = "tongyi"
 base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
 api_key_env = "DASHSCOPE_API_KEY"
-default_model = "qwen3.8-max"
+default_model = "qwen3.8-flash"
 models = [
+    "qwen3.8-flash",
     "qwen3.8-max",
     "qwen3.7-max",
     "qwen3.7-plus",
-    "qwen3.8-flash",
     "qwen3-vl-flash",
     "qwen3-vl-plus",
 ]

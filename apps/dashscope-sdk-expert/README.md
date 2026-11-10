@@ -101,7 +101,7 @@ Before generating code, first verify the user's installed SDK version and API si
 ```toml
 user_name = "dashscope"
 provider = "tongyi"
-model = "qwen3.8-max"
+model = "qwen3.8-flash"
 memory_user_id = "agenticx-dashscope"
 ```
 
