@@ -1,4 +1,4 @@
-# DashScope SDK Expert — AgenticX Configuration-Driven Example
+# DashScope SDK Expert — AgenticX Configuration-Driven Expert Template
 
 Versioned App Bundle for DashScope AgenticX 1.0.0. Install from this catalog checkout:
 
@@ -7,13 +7,13 @@ agenticx app install ./apps/dashscope-sdk-expert
 agenticx app verify dashscope-sdk-expert
 ```
 
-The full profile and Skills are contained in this bundle. `/example download` is workspace scaffolding, not App installation or publisher verification.
+The full profile and Skills are contained in this bundle. `/expert download` is workspace scaffolding, not App installation or publisher verification.
 
 **Online guide**: https://help.aliyun.com/en/model-studio/dashscope-sdk-expert
 
-This example shows how to build a scenario-specific AI expert agent using **AgenticX (agenticx)**'s native configuration mechanisms.
+This Expert template builds a scenario-specific AI agent using **AgenticX (agenticx)**'s native configuration mechanisms.
 
-**Core idea: configuration-driven, zero Python glue.** The agent's identity, capabilities, skills, and knowledge index are all defined by files under `.agenticx/`; download the example and run `agenticx` directly to start.
+**Core idea: configuration-driven, zero Python glue.** The agent's identity, capabilities, skills, and knowledge index are all defined by files under `.agenticx/`; download the Expert and run `agenticx` directly to start.
 
 **SDK baseline:** new Python examples use DashScope **2.0.3** (`dashscope.Client` / `AsyncClient`) and `dashscope.errors`. The skills also retain 1.x guidance for maintaining existing `Generation.call`-style code; installing 2.0 does not require rewriting working 1.x applications.
 
@@ -48,8 +48,8 @@ apps/dashscope-sdk-expert/
 pip install "dashscope-agenticx>=1.0.0,<2"
 export DASHSCOPE_API_KEY="sk-xxx"
 
-# Merge the example into ./.agenticx/ (same-name files are auto-backed up to .agenticx/backup/; undo with example restore)
-agenticx example download dashscope-sdk-expert
+# Merge the Expert into ./.agenticx/ (conflicts backed up to .agenticx/backup/; undo with agenticx expert restore)
+agenticx expert download dashscope-sdk-expert
 
 # Start — no cd, no Python launcher script needed
 agenticx
@@ -109,7 +109,7 @@ memory_user_id = "agenticx-dashscope"
 
 To create an AI expert for your own scenario:
 
-1. `agenticx example download dashscope-sdk-expert` (merges into your project's `./.agenticx/`)
+1. `agenticx expert download dashscope-sdk-expert` (merges into your project's `./.agenticx/`)
 2. Edit `.agenticx/system-prompt.md` — define your agent persona
 3. Edit `.agenticx/skills/` — add your domain knowledge and skill templates (loaded by the model on demand)
 4. Edit `.agenticx/config.toml` — choose a suitable model

@@ -1,4 +1,4 @@
-# Basic Chat — Minimal Working AgenticX Example
+# Basic Chat — Minimal AgenticX Expert Template
 
 Versioned App Bundle for DashScope AgenticX 1.0.0. Install from this catalog checkout:
 
@@ -7,7 +7,7 @@ agenticx app install ./apps/basic-chat
 agenticx app verify basic-chat
 ```
 
-The full profile and Skills are contained in this bundle. `/example download` is workspace scaffolding, not App installation or publisher verification.
+The full profile and Skills are contained in this bundle. `/expert download` is workspace scaffolding, not App installation or publisher verification.
 
 Shows how to start a general-purpose chat agent with web search capability using minimal configuration. **All the intelligence lives in the `.agenticx/` configuration — there is no Python startup code** — download and run `agenticx` directly.
 
@@ -33,8 +33,8 @@ apps/basic-chat/
 pip install "dashscope-agenticx>=1.0.0,<2"
 export DASHSCOPE_API_KEY="sk-xxx"
 
-# Merge the example into ./.agenticx/ (same-name files are auto-backed up to .agenticx/backup/; undo with example restore)
-agenticx example download basic-chat
+# Merge the Expert into ./.agenticx/ (conflicts backed up to .agenticx/backup/; undo with agenticx expert restore)
+agenticx expert download basic-chat
 
 # Edit .agenticx/custom-extensions.toml to add the providers you need
 # Edit .agenticx/system-prompt.md to define the agent persona
@@ -46,8 +46,8 @@ agenticx --tui
 agenticx -c "hello"
 ```
 
-> Want it in a brand-new directory? `mkdir my-agent && cd my-agent && agenticx example download basic-chat`,
-> or use `agenticx example download basic-chat --target my-agent`.
+> Want it in a brand-new directory? `mkdir my-agent && cd my-agent && agenticx expert download basic-chat`,
+> or use `agenticx expert download basic-chat --target my-agent`.
 
 ## Configuration as Program
 

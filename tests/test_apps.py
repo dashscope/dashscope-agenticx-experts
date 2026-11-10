@@ -54,6 +54,14 @@ def test_expert_profiles_are_self_contained():
     } <= {path.name for path in skills.glob("*.md")}
 
 
+def test_expert_profiles_record_their_identity():
+    from dashscope_agenticx.utils.toml import load_toml
+
+    for name in APP_NAMES:
+        marker = ROOT / "apps" / name / ".agenticx" / "expert.toml"
+        assert load_toml(marker) == {"name": name}
+
+
 def test_apps_require_stable_runtime():
     for name in APP_NAMES:
         manifest = load_app_manifest(ROOT / "apps" / name)
@@ -69,7 +77,9 @@ def test_expert_profiles_use_flash_default_and_lowercase_models():
         profile = ROOT / "apps" / name / ".agenticx"
         config = load_toml(profile / "config.toml")
         assert config["model"] == "qwen3.8-flash"
-        for provider in load_toml(profile / "custom-extensions.toml")["providers"]:
+        for provider in load_toml(profile / "custom-extensions.toml")[
+            "providers"
+        ]:
             assert provider["default_model"] == "qwen3.8-flash"
             models = provider["models"]
             assert models[0] == "qwen3.8-flash"

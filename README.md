@@ -17,7 +17,11 @@ directories or legacy profile layouts.
 
 Each bundle contains `app.toml`, a self-contained `.agenticx/` profile,
 evaluation metadata, and acceptance configuration. The SDK Expert includes
-its complete domain Skills; it does not depend on a sibling example directory.
+its complete domain Skills; it does not depend on a sibling Expert directory.
+
+Each profile includes `.agenticx/expert.toml` with its Expert name. AgenticX
+uses this record to display the selected Expert in its welcome panel. The
+canonical role-template commands are `/expert` and `agenticx expert`.
 
 ## Install an App
 
@@ -43,7 +47,7 @@ into the current workspace's `.agenticx/` directory:
 
 ```bash
 export DASHSCOPE_API_KEY="<your-api-key>"
-agenticx example download basic-chat
+agenticx expert download basic-chat
 agenticx
 ```
 
