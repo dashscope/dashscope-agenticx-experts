@@ -24,14 +24,14 @@ def test_catalog_apps_are_installable():
 
 
 def test_expert_profiles_pass_download_safety_validation():
-    from dashscope_agenticx.cli.examples import (
-        _example_files,
+    from dashscope_agenticx.cli.experts import (
+        _expert_files,
         _validate_expert_profile,
     )
 
     for name in APP_NAMES:
         bundle = ROOT / "apps" / name
-        _validate_expert_profile(bundle, _example_files(bundle))
+        _validate_expert_profile(bundle, _expert_files(bundle))
 
 
 def test_source_trees_have_no_legacy_profiles():
@@ -42,7 +42,7 @@ def test_source_trees_have_no_legacy_profiles():
         assert not any(source.rglob(".acli"))
 
 
-def test_catalog_has_no_top_level_examples():
+def test_catalog_has_no_top_level_experts():
     assert not (ROOT / "basic-chat").exists()
     assert not (ROOT / "dashscope-sdk-expert").exists()
 
@@ -77,7 +77,10 @@ def test_apps_require_stable_runtime():
     for name in APP_NAMES:
         manifest = load_app_manifest(ROOT / "apps" / name)
         assert manifest is not None
-        assert manifest.version == "1.0.0"
+        expected_version = (
+            "1.0.1" if name == "dashscope-sdk-expert" else "1.0.0"
+        )
+        assert manifest.version == expected_version
         assert manifest.runtime_requires == ">=1.0.0,<2"
 
 

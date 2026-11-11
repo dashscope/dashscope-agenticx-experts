@@ -6,7 +6,7 @@ AgenticX Runtime.
 
 ## Catalog
 
-All bundles live under `apps/<name>/`. There are no top-level example
+All bundles live under `apps/<name>/`. There are no legacy top-level Expert
 directories or legacy profile layouts.
 
 | App | Purpose |
@@ -66,4 +66,4 @@ python -m pytest -q tests/test_apps.py
 
 The catalog tests check manifests, runtime requirements, evaluation and
 acceptance files, self-contained profiles, and the absence of legacy
-top-level examples. They do not call model APIs.
+top-level Expert directories. They do not call model APIs.
