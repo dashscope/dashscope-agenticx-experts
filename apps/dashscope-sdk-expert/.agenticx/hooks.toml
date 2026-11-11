@@ -1,14 +1,6 @@
 [[hooks.after_tool_call]]
 match = "write_file"
 condition = "*.py"
-action = "run"
-run = ["python", "-m", "py_compile", "{path}"]
-on_fail = "warn"
-silent = true
-
-[[hooks.after_tool_call]]
-match = "write_file"
-condition = "*.py"
 action = "log"
 message = "{timestamp} | wrote {filename}"
 

@@ -23,6 +23,17 @@ def test_catalog_apps_are_installable():
         assert (bundle / manifest.acceptance_path).is_file()
 
 
+def test_expert_profiles_pass_download_safety_validation():
+    from dashscope_agenticx.cli.examples import (
+        _example_files,
+        _validate_expert_profile,
+    )
+
+    for name in APP_NAMES:
+        bundle = ROOT / "apps" / name
+        _validate_expert_profile(bundle, _example_files(bundle))
+
+
 def test_source_trees_have_no_legacy_profiles():
     source_roots = [ROOT / "apps" / name for name in APP_NAMES]
 
